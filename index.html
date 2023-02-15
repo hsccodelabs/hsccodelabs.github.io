@@ -2,6 +2,12 @@
 <html>
 <head>
   <title>予約フォーム</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+
   <script type="text/javascript">
     function validateForm(){  
     var flag = 0;
@@ -22,14 +28,28 @@
     }else{ 
       location.href="thanks.html"
     }
-  }  
+  }
+  </script>
+  <script>
+  $(document).ready(function() {
+      $('#generate').click(function() {
+          var values = ["dog", "cat", "parrot", "rabbit"];
+
+      var select = $('<select>').prop('id', 'pets').prop('name', 'pets');
+
+      $(values).each(function() {
+          select.append($("<option>").prop('value', this)
+          .text(this.charAt(0).toUpperCase() + this.slice(1)));
+      });
+
+      var label = $("<label>").prop('for', 'pets').text("Choose your pets: ");
+      var br = $("<br>");
+
+      $('#container').append(label).append(select).append(br);
+      })
+  });
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
   
 <body>
