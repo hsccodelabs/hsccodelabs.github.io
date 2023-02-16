@@ -1,19 +1,25 @@
-<html>
+<!DOCTYPE html>
 <head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
 
-<script type="text/javascript">
-$(function(){
-$("#datepicker").datepicker();
-});
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "showOn", 'both');
+    $("#datepicker").datepicker("option", "buttonImageOnly", true);
+    $("#datepicker").datepicker("option", "buttonImage", 'ico_calendar.png');
+  });
 </script>
 </head>
 <body>
 
-
+<form id="form_1" name="" post="">
+  <label>DATEPICKER</label>
 <input type=“text” id=“datepicker”>
-
+</form>
 </body>
 </html>
