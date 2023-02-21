@@ -9,9 +9,19 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
   <script>
   $(function() {
+    //datapicker init.
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
     $("#datepicker").datepicker();
-    var opt = ' <option selected>1</option>';
+    //time dropdown init.
+    var opt = ' <option>00:00</option>';
+    opt += ' <option>00:30</option>';
+    for(var i=2;i<=24;i++){
+      opt += '<option>' + ('0'+i).slice(-2) + ':00';
+      opt += '<option>' + ('0'+i).slice(-2) + ':30';
+    }
+    $("#times").append(opt);
+    //term dropdown init.
+    opt = ' <option selected>1</option>';
     for(var i = 2; i<= 4; i++){
       opt += ' <option>' + i + '</option>';
 
