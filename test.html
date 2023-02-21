@@ -11,13 +11,13 @@
   $(function() {
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
     $("#datepicker").datepicker();
-  });
-  var opt = ' <option selected>1</option>';
-  for(var i = 2; i<= 4; i++){
-    opt += ' <option>' + i + '</option>';
+    var opt = ' <option selected>1</option>';
+    for(var i = 2; i<= 4; i++){
+      opt += ' <option>' + i + '</option>';
 
-  }
-  $("#terms").append(opt);
+    }
+    $("#terms").append(opt);
+  });
   </script>
 </head>
 <body>
