@@ -11,20 +11,13 @@
   $(function() {
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
     $("#datepicker").datepicker();
-  //});
-  //＄(function() {
-    for(var i=1;i<5;i++){
-      var option = document.createElement("option");
-      option.value=i;
-      option.innerText=i;
-      $("#terms").appendChild(option);
-    }
   });
-$(document).ready(function(){
-  for(var i=1;i<5;i++){
-    $('#terms').append("<option>"+i+"</option>");
+  var opt = ' <option selected>1</option>';
+  for(var i = 2; i<= 4; i++){
+    opt += ' <option>' + i + '</option>';
+
   }
-});
+  $("#terms").append(opt);
   </script>
 </head>
 <body>
