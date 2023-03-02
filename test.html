@@ -11,19 +11,21 @@
 	<link rel="stylesheet" href="jquery.timepicker.min.css" />
   <script>
   $(function() {
-    //datapicker init.
-    $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-    $("#datepicker").datepicker({
-	minDate: new Date(), 
-	maxDate: '+1m'
-    });
-    //timepicker init.
-    $("#timepicker").timepicker({
-	'scrollDefault': 'now',
-	'minTime': '0:00',
-	'maxTime': '23:30',
-	'step': 30
-    });
+	//datapicker init.
+	$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+	$("#datepicker").datepicker({
+		minDate: new Date(), 
+		maxDate: '+1m'
+	});
+	</script>
+	<script>
+	    //timepicker init.
+	    $("#timepicker").timepicker({
+		'scrollDefault': 'now',
+		'minTime': '0:00',
+		'maxTime': '23:30',
+		'step': 30
+	    });
 /*    //time dropdown init.
     var opt = ' <option>00:00</option>';
     opt += ' <option>00:30</option>';
@@ -33,15 +35,16 @@
     }
     $("#times").append(opt);
 */
-    //term dropdown init.
-    opt = ' <option selected>1</option>';
-    for(var i = 2; i<= 4; i++){
-      opt += ' <option>' + i + '</option>';
-
-    }
-    $("#terms").append(opt);
-  });
-  </script>
+	</script>
+	<script>
+		//term dropdown init.
+		opt = ' <option selected>1</option>';
+		for(var i = 2; i<= 4; i++){
+			opt += ' <option>' + i + '</option>';
+		}
+		$("#terms").append(opt);
+		});
+	</script>
 </head>
 <body>
   <div id="containor">
