@@ -11,7 +11,7 @@
   $(function() {
     //datapicker init.
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-    $("#datepicker").datepicker();
+    $("#datepicker").datepicker({minDate: new Date(), maxDate: '+1m'});
     //time dropdown init.
     var opt = ' <option>00:00</option>';
     opt += ' <option>00:30</option>';
