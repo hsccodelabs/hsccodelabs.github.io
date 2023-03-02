@@ -6,8 +6,9 @@
   <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
   <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.11.0/jquery.timepicker.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.11.0/jquery.timepicker.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.11.0/jquery.timepicker.min.css" />
   <script>
   $(function() {
@@ -18,10 +19,11 @@
 	maxDate: '+1m'
     });
     //timepicker init.
-    $.("timepicker").timepicker({
+    $.("#timepicker").timepicker({
+	'scrollDefault': 'now',
 	'minTime': '0:00',
 	'maxTime': '23:30',
-	'step': 30,
+	'step': 30
     });
 /*    //time dropdown init.
     var opt = ' <option>00:00</option>';
@@ -49,7 +51,7 @@
     <p>名前:<input type="text" id="name" name="name"/> </p>
     <p>メール:<input type="text" id="mail" name="mail"/> </p>
     <p>日付:<input type="text" id="datepicker" name="date"/> </p>
-    <p>開始時間：<input type="text" id="timepicker" class="timepicker" name="times"/> </p>
+    <p>開始時間：<input type="text" id="timepicker" name="times"/> </p>
 <!--    <p>開始時間:<select id="times" name="times"> </select></p> -->
     <p>使用時間:<select id="terms" name="terms"> </select></p>
     <p><input type="submit" value="送信"><p>
