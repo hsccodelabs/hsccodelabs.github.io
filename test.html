@@ -9,16 +9,18 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
 	<script src="jquery.timepicker.min.js"></script>
 	<link rel="stylesheet" href="jquery.timepicker.min.css" />
-  <script>
-  $(function() {
-	//datapicker init.
-	$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
-	$("#datepicker").datepicker({
-		minDate: new Date(), 
-		maxDate: '+1m'
+	<script>
+	$(function() {
+		//datapicker init.
+		$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+		$("#datepicker").datepicker({
+			minDate: new Date(), 
+			maxDate: '+1m'
+		});
 	});
 	</script>
 	<script>
+	$(fcuntion() {
 	    //timepicker init.
 	    $("#timepicker").timepicker({
 		'scrollDefault': 'now',
@@ -26,6 +28,7 @@
 		'maxTime': '23:30',
 		'step': 30
 	    });
+	});
 /*    //time dropdown init.
     var opt = ' <option>00:00</option>';
     opt += ' <option>00:30</option>';
@@ -37,6 +40,7 @@
 */
 	</script>
 	<script>
+	$(fcuntion(){
 		//term dropdown init.
 		opt = ' <option selected>1</option>';
 		for(var i = 2; i<= 4; i++){
@@ -44,6 +48,7 @@
 		}
 		$("#terms").append(opt);
 		});
+	});
 	</script>
 </head>
 <body>
