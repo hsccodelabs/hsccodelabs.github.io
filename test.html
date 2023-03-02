@@ -14,14 +14,14 @@
     //datapicker init.
     $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
     $("#datepicker").datepicker({
-      minDate: new Date(), 
-      maxDate: '+1m'
+	minDate: new Date(), 
+	maxDate: '+1m'
     });
     //timepicker init.
     $.("timepicker").timepicker({
-		  'minTime': '0:00',
-		  'maxTime': '23:30',
-		  'step': 30,
+	'minTime': '0:00',
+	'maxTime': '23:30',
+	'step': 30,
     });
 /*    //time dropdown init.
     var opt = ' <option>00:00</option>';
@@ -30,8 +30,8 @@
       opt += '<option>' + ('0'+i).slice(-2) + ':00';
       opt += '<option>' + ('0'+i).slice(-2) + ':30';
     }
-    */
     $("#times").append(opt);
+*/
     //term dropdown init.
     opt = ' <option selected>1</option>';
     for(var i = 2; i<= 4; i++){
@@ -50,7 +50,7 @@
     <p>メール:<input type="text" id="mail" name="mail"/> </p>
     <p>日付:<input type="text" id="datepicker" name="date"/> </p>
     <p>開始時間：<input type="text" id="timepicker" class="timepicker" name="times"/> </p>
-/*    <p>開始時間:<select id="times" name="times"> </select></p> */
+<!--    <p>開始時間:<select id="times" name="times"> </select></p> -->
     <p>使用時間:<select id="terms" name="terms"> </select></p>
     <p><input type="submit" value="送信"><p>
   </form>
