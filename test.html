@@ -21,33 +21,19 @@
 	</script>
 	<script>
 	$(function() {
-	    //timepicker init.
-	    $("#timepicker").timepicker({
-		'scrollDefault': 'now',
-		'minTime': '0:00',
-		'maxTime': '23:30',
-		'step': 30
-	    });
-	});
-/*    //time dropdown init.
-    var opt = ' <option>00:00</option>';
-    opt += ' <option>00:30</option>';
-    for(var i=2;i<=23;i++){
-      opt += '<option>' + ('0'+i).slice(-2) + ':00';
-      opt += '<option>' + ('0'+i).slice(-2) + ':30';
-    }
-    $("#times").append(opt);
-*/
-	</script>
-	<script>
-	$(function(){
+		//timepicker init.
+		$("#timepicker").timepicker({
+			'scrollDefault': 'now',
+			'minTime': '0:00',
+			'maxTime': '23:30',
+			'step': 30
+		});
 		//term dropdown init.
 		opt = ' <option selected>1</option>';
 		for(var i = 2; i<= 4; i++){
 			opt += ' <option>' + i + '</option>';
 		}
 		$("#terms").append(opt);
-		});
 	});
 	</script>
 </head>
