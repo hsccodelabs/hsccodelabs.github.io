@@ -1,167 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ja">
 <head>
-  <title>予約フォーム</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-
-  <script type="text/javascript">
-    function validateForm(){  
-    var flag = 0;
-    if(document.getElementById("times").value==""){ 
-      flag = 1;
-    }else if(document.getElementById("timee").value==""){ 
-      flag = 1;
-    }else if(document.getElementById("time3").value==""){ 
-      flag = 1;
-    }else if(document.getElementById("company").value==""){ 
-      flag = 1;
-    }else if(document.getElementById("mail").value==""){ 
-      flag = 1;
-    }
-      
-    if(flag){
-      alert("必須項目に未入力がありました"); // 入力漏れがあれば警告ダイアログを表示
-    }else{ 
-      location.href="thanks.html"
-    }
-  }
-  </script>
-  <script>
-  $(document).ready(function() {
-      $('#generate').click(function() {
-          var values = ["dog", "cat", "parrot", "rabbit"];
-
-      var select = $('<select>').prop('id', 'pets').prop('name', 'pets');
-
-      $(values).each(function() {
-          select.append($("<option>").prop('value', this)
-          .text(this.charAt(0).toUpperCase() + this.slice(1)));
-      });
-
-      var label = $("<label>").prop('for', 'pets').text("Choose your pets: ");
-      var br = $("<br>");
-
-      $('#container').append(label).append(select).append(br);
-      })
-  });
-  </script>
-
+  <meta charset="utf-8" />
+  <title>jQuery UI Datepicker - Default functionality</title>
+	<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+	<script src="jquery.timepicker.min.js"></script>
+	<link rel="stylesheet" href="jquery.timepicker.min.css" />
+	<script>
+	$(function() {
+		//datapicker init.
+		$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+		$("#datepicker").datepicker({
+			minDate: new Date(), 
+			maxDate: '+1m'
+		});
+	});
+	</script>
+	<script>
+	$(function() {
+		//timepicker init.
+		$("#timepicker").timepicker({
+			'scrollDefault': 'now',
+			'minTime': '0:00',
+			'maxTime': '23:30',
+			'step': 30
+		});
+		//term dropdown init.
+		opt = ' <option selected>1</option>';
+		for(var i = 2; i<= 4; i++){
+			opt += ' <option>' + i + '</option>';
+		}
+		$("#terms").append(opt);
+	});
+	</script>
 </head>
-  
 <body>
-
-<!-- <iframe src="form.html" javascript:refresh(); id="fake-target" name="fake-target" style="width:0px; height:0px; border:0px;">  
-</iframe> --> 
-
-<table border="0" cellspacing="0" cellpadding="0" class="mailform">
-<tbody>
-
-<form id="formID"  action="https://script.google.com/macros/s/AKfycbzP4pcgTcIQNeXmC5vuANSnCEqHnX39Xvjuh-rYd-BIHVya0HM0/exec" method="post" target="fake-target">  
-
-<tr>
-<th>日付<span>*</span>
-</th>
-<td><input type="text"  name="data" id="datepicker">
-</td></tr>
-<script type="text/javascript">
-$(function(){
-$("#datepicker").datepicker();
-});
-</script>
-<tr>
-    <th>時間<span>*</span>
-    </th>
-    <td>
-<select name="times" id="times" class="required" data-inline="1">
-    <option value="00" label="00">00</option>
-    <option value="01" label="01">01</option>
-    <option value="02" label="02">02</option>
-    <option value="03" label="03">03</option>
-    <option value="04" label="04">04</option>
-    <option value="05" label="05">05</option>
-    <option value="06" label="06">06</option>
-    <option value="07" label="07">07</option>
-    <option value="08" label="08">08</option>
-    <option value="09" label="09">09</option>
-    <option value="10" label="10">10</option>
-    <option value="11" label="11">11</option>
-    <option value="12" label="12">12</option>
-    <option value="13" label="13">13</option>
-    <option value="14" label="14">14</option>
-    <option value="15" label="15">15</option>
-    <option value="16" label="16">16</option>
-    <option value="17" label="17">17</option>
-    <option value="18" label="18">18</option>
-    <option value="19" label="19">19</option>
-    <option value="20" label="20">20</option>
-    <option value="21" label="21">21</option>
-    <option value="22" label="22">22</option>
-    <option value="23" label="23">23</option>
-</select>:
-
-<select name="timee" id="timee" class="required" data-inline="1">
-    <option value="1" label="01">1時間</option>
-    <option value="2" label="02">2時間</option>
-    <option value="3" label="03">3時間</option>
-    <option value="4" label="04">4時間</option>
-</select></td></tr>
-<tr>
-    <th>ご相談時間<span>*</span>
-    </th>
-    <td>
-<select name="time3" id="time3" class="required" data-inline="1">
-    <option value="" label="--">--</option>
-    <option value="10" label="10">10</option>
-    <option value="20" label="20">20</option>
-    <option value="30" label="30">30</option>
-    <option value="40" label="40">40</option>
-    <option value="50" label="50">50</option>
-    <option value="60" label="60">60</option>
-    <option value="70" label="70">70</option>
-    <option value="80" label="80">80</option>
-    <option value="90" label="90">90</option>
-    <option value="100" label="100">100</option>
-    <option value="110" label="110">110</option>
-    <option value="120" label="120">120</option>
-    <option value="130" label="130">130</option>
-    <option value="140" label="140">140</option>
-    <option value="150" label="150">150</option>
-    <option value="160" label="160">160</option>
-    <option value="170" label="170">170</option>
-    <option value="180" label="180">180</option>
-</select></td></tr>
-<tr>
-    <th>会社名（お名前）<span>*</span>
-    </th>
-    <td>
-<input type="text" name="company" id="company" value="" title="" class=" required"></td></tr>
-<tr>
-    <th>メールアドレス<span>*</span>
-    </th>
-    <td>
-<input type="text" name="mail" id="mail" value="" title="" class="mmail required"></td></tr>
-<tr>
-    <th>電話番号
-    </th>
-    <td>
-<input type="text" name="tel" id="tel" value="" title="" class="phone"></td></tr>
-<tr>
-    <th>コメント
-    </th>
-    <td>
-<textarea name="text" id="text" cols="30" rows="5" class="" title=""></textarea></td></tr>
-<tr>
-    <th>*は必須項目です。<span>*</span>
-    </th>
-    <td>
-<button onClick="setTimeout('javascript:validateForm();', 500)">送信</button></td></tr>
- 
-</form>
-</tbody>
-</table>
+  <div id="containor">
+    
+  <form id="formID" method="post" action="https://script.google.com/macros/s/AKfycbx3SJwhlPzQIVd72hbKpooY1PsSTDI776u3s7g65Ue5aMKi_coBZGkODo7bG322WRSB7g/exec">
+    <p>名前:<input type="text" id="name" name="name"/> </p>
+    <p>メール:<input type="text" id="mail" name="mail"/> </p>
+    <p>日付:<input type="text" id="datepicker" name="date"/> </p>
+    <p>開始時間：<input type="text" id="timepicker" name="times"/ data-time-format="H:i"> </p>
+    <p>使用時間:<select id="terms" name="terms"> </select></p>
+    <p><input type="submit" value="送信"><p>
+  </form>
+  </div>
 </body>
 </html>
